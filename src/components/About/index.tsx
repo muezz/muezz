@@ -205,7 +205,7 @@ const AboutSection = ({
 
       <div className='hidden md:block'>
         <PurpleArrows className='absolute top-12 left-24' />
-        <Dots className='absolute top-12 right-48 lg:right-96' />
+        <Dots className='absolute top-8 right-48 lg:right-96' />
         <Logo className='absolute top-16 right-16' />
         <Arrows className='absolute right-12 hidden lg:block xl:right-36 top-[40%]' />
         <Dots className='absolute bottom-0 lg:bottom-16 left-36 rotate-90' />
@@ -236,14 +236,15 @@ const AboutSection = ({
               className='text-gray-400 md:w-1/2 font-mono leading-relaxed mb-12 text-lg'
               variants={contentVariantsLeft}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. sed do
-              eiusmod tempor incididunt ut labore et dolore magna.
+              I’m a passionate software engineer who crafts elegant solutions
+              for web and mobile platforms. Whether it’s building scalable web
+              applications or creating seamless user experiences, I bring ideas
+              to life with code and creativity.
             </motion.p>
           </div>
           <div className='justify-self-center'>
             <motion.a
-              href='https://github.com/theodorusclarence/ts-nextjs-tailwind-starter'
+              href='/'
               className='bg-[#C1FF00] hover:bg-[#d4ff4d] text-black px-8 py-3 rounded-full font-medium inline-block'
               variants={buttonVariants}
               initial='initial'

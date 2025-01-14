@@ -47,18 +47,18 @@ export default function HomePage() {
         <Services
           title='Services'
           subtitle='Mobile Apps'
-          description='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+          description='Designing sleek and intuitive mobile apps for Android and iOS to meet your unique needs with top-notch performance.'
           imageSrc='/images/service1.png'
           buttonText='Learn More'
-          buttonLink='/mobile-apps'
+          buttonLink='/'
         />
         <Services
           title='Services'
           subtitle='Web Development'
-          description='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+          description='Creating fast, responsive websites and web apps using modern technologies like React and Next.js.'
           imageSrc='/images/service2.png'
           buttonText='Learn More'
-          buttonLink='/mobile-apps'
+          buttonLink='/'
         />
       </section>
       <section id='testimonials' className='relative'>

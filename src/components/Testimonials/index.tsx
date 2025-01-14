@@ -11,27 +11,27 @@ interface TestimonialItem {
 const testimonialList: TestimonialItem[] = [
   {
     photo: '/images/client1.png',
-    name: 'Akshay Kumar',
+    name: 'Sarah Williams',
     content:
-      '"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus magni tempore provident? Quaerat, dicta saepe praesentium eaque nobis corrupti aut, quibusdam provident consequatur."',
+      '"Working with this team was an absolute pleasure. They took my vision and transformed it into a beautiful, functional reality. Their attention to detail, creativity, and commitment exceeded my expectations."',
   },
   {
     photo: '/images/client2.png',
-    name: 'Arjun Kapur',
+    name: 'Michael Johnson',
     content:
-      '"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus magni tempore provident? Quaerat, dicta saepe praesentium eaque nobis corrupti aut, quibusdam provident consequatur."',
+      '"Their professionalism and expertise are unmatched. Their innovative approach and clear communication ensured the project was completed perfectly. Highly recommended!"',
   },
   {
     photo: '/images/client1.png',
-    name: 'Raima Sen',
+    name: 'Emily Davis',
     content:
-      '"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus magni tempore provident? Quaerat, dicta saepe praesentium eaque nobis corrupti aut, quibusdam provident consequatur."',
+      '"They truly understand the importance of user experience and design. The final product not only looks stunning but also performs flawlessly. I couldn’t have asked for a better team to collaborate with."',
   },
   {
     photo: '/images/client2.png',
-    name: 'Akshay Kumar',
+    name: 'John Smith',
     content:
-      '"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus magni tempore provident? Quaerat, dicta saepe praesentium eaque nobis corrupti aut, quibusdam provident consequatur."',
+      '"I was impressed by their ability to handle challenges and deliver results within a tight deadline. Their work ethic and passion for excellence made all the difference in our project’s success."',
   },
 ];
 
@@ -123,14 +123,15 @@ const TestimonialSection: React.FC = () => {
             className='absolute top-0 right-8'
           />
         </div>
-        <div className='flex justify-center items-center w-full text-center mb-6 lg:mb-12'>
+        <div className='flex justify-center items-center w-full text-center mb-2'>
           <div className='max-w-lg'>
             <h2 className='text-3xl leading-none md:text-[45px] font-bold mb-6'>
               Testimonials
             </h2>
             <p className='text-lg opacity-80'>
-              Assumenda non repellendus distinctio nihil dicta sapiente,
-              quibusdam maiores, illum at, aliquid blanditiis eligendi qui.
+              Hear from our satisfied clients who have experienced exceptional
+              results through our services. These testimonials highlight the
+              dedication, creativity, and quality that define our work.
             </p>
           </div>
         </div>

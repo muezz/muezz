@@ -41,6 +41,51 @@ export default function Header() {
     setIsActive(false);
   };
 
+  const scrollToSection = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+    closeMenu?: () => void
+  ) => {
+    e.preventDefault();
+
+    if (closeMenu) {
+      closeMenu();
+    }
+
+    setTimeout(
+      () => {
+        const target = document.querySelector(href);
+        if (target) {
+          const elementPosition =
+            target.getBoundingClientRect().top + window.scrollY;
+          const startPosition = window.scrollY;
+          const distance = elementPosition - startPosition;
+          const duration = 2000;
+          let startTime: number | null = null;
+
+          const easeInOutQuad = (t: number) =>
+            t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+
+          const animation = (currentTime: number) => {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const progress = Math.min(timeElapsed / duration, 1);
+            const scroll = startPosition + distance * easeInOutQuad(progress);
+
+            window.scrollTo(0, scroll);
+
+            if (timeElapsed < duration) {
+              requestAnimationFrame(animation);
+            }
+          };
+
+          requestAnimationFrame(animation);
+        }
+      },
+      closeMenu ? 800 : 0
+    );
+  };
+
   return (
     <>
       <div className='lg:hidden fixed w-full top-0 left-0 z-50 bg-transparent border-none'>
@@ -84,34 +129,63 @@ export default function Header() {
               <ul className='flex space-x-12'>
                 <StaggerItem direction='up'>
                   <NavLink href='#home'>
-                    <Link href='#home'>Home</Link>
+                    <Link
+                      href='#home'
+                      onClick={(e) => scrollToSection(e, '#home')}
+                    >
+                      Home
+                    </Link>
                   </NavLink>
                 </StaggerItem>
                 <StaggerItem direction='up'>
                   <NavLink href='#about'>
-                    <Link href='#about' scroll={true}>
+                    <Link
+                      href='#about'
+                      scroll={true}
+                      onClick={(e) => scrollToSection(e, '#about')}
+                    >
                       About Us
                     </Link>
                   </NavLink>
                 </StaggerItem>
                 <StaggerItem direction='up'>
                   <NavLink href='#services'>
-                    <Link href='#services'>Services</Link>
+                    <Link
+                      href='#services'
+                      onClick={(e) => scrollToSection(e, '#services')}
+                    >
+                      Services
+                    </Link>
                   </NavLink>
                 </StaggerItem>
                 <StaggerItem direction='up'>
                   <NavLink href='#testimonials'>
-                    <Link href='#testimonials'>Testimonials</Link>
+                    <Link
+                      href='#testimonials'
+                      onClick={(e) => scrollToSection(e, '#testimonials')}
+                    >
+                      Testimonials
+                    </Link>
                   </NavLink>
                 </StaggerItem>
                 <StaggerItem direction='up'>
                   <NavLink href='#projects'>
-                    <Link href='#projects'>Recent Work</Link>
+                    <Link
+                      href='#projects'
+                      onClick={(e) => scrollToSection(e, '#projects')}
+                    >
+                      Recent Work
+                    </Link>
                   </NavLink>
                 </StaggerItem>
                 <StaggerItem direction='up'>
                   <NavLink href='#contact'>
-                    <Link href='#contact'>Get In Touch</Link>
+                    <Link
+                      href='#contact'
+                      onClick={(e) => scrollToSection(e, '#contact')}
+                    >
+                      Get In Touch
+                    </Link>
                   </NavLink>
                 </StaggerItem>
               </ul>

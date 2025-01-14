@@ -1,20 +1,38 @@
-// import nodemailer from 'nodemailer';
+import { parsePhoneNumberFromString } from 'libphonenumber-js';
 import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 
 export async function POST(req: Request) {
   try {
     const data = await req.json();
+    const { email, mobile, message } = data;
 
-    const { name, email, project, services } = data;
-
-    if (!name || !email || !project || services === undefined) {
+    // Validate email
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return NextResponse.json(
-        { error: 'Missing required fields' },
+        { error: 'Invalid email address.' },
         { status: 400 }
       );
     }
 
-    // Configure the transporter
+    // Validate mobile number
+    const phoneNumber = parsePhoneNumberFromString(mobile || '', 'US'); // Default country code can be changed
+    if (!phoneNumber || !phoneNumber.isValid()) {
+      return NextResponse.json(
+        { error: 'Invalid mobile number.' },
+        { status: 400 }
+      );
+    }
+
+    // Validate message
+    if (!message || message.trim().length === 0) {
+      return NextResponse.json(
+        { error: 'Message cannot be empty.' },
+        { status: 400 }
+      );
+    }
+
+    // Configure the email transporter
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
       port: Number(process.env.EMAIL_PORT),
@@ -25,26 +43,20 @@ export async function POST(req: Request) {
       },
     });
 
-    // Compose the email
+    // Compose email
     const mailOptions = {
-      from: `${name} <${process.env.EMAIL_USER}>`,
+      from: `Contact Form <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER,
-      replyTo: email,
-      subject: 'New Inquiry from Contact Form',
+      subject: 'New Contact Form Submission',
       html: `
         <h1>New Contact Form Submission</h1>
-        <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Project:</strong> ${project}</p>
-        <p><strong>Services:</strong> ${
-          services && services.length > 0
-            ? services.join(', ')
-            : 'No services selected'
-        }</p>
+        <p><strong>Mobile:</strong> ${phoneNumber.formatInternational()}</p>
+        <p><strong>Message:</strong> ${message}</p>
       `,
     };
 
-    // Send the email
+    // Send email
     await transporter.sendMail(mailOptions);
 
     return NextResponse.json(
@@ -52,9 +64,10 @@ export async function POST(req: Request) {
       { status: 200 }
     );
   } catch (error) {
-    console.error('Error sending email:', error);
+    const errorMessage =
+      error instanceof Error ? error.message : 'An unknown error occurred';
     return NextResponse.json(
-      { error: 'Failed to send inquiry' },
+      { error: `Failed to send inquiry: ${errorMessage}` },
       { status: 500 }
     );
   }

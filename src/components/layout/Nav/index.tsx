@@ -14,16 +14,38 @@ export default function Navigation({ closeMenu }: { closeMenu: () => void }) {
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
-    e.preventDefault(); // Prevent default anchor behavior
-    closeMenu(); // Close the mobile menu
+    e.preventDefault();
+    closeMenu();
 
     setTimeout(() => {
       const target = document.querySelector(href);
       if (target) {
-        // Scroll smoothly to the section
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const elementPosition =
+          target.getBoundingClientRect().top + window.scrollY;
+        const startPosition = window.scrollY;
+        const distance = elementPosition - startPosition;
+        const duration = 2000;
+        let startTime: number | null = null;
+
+        const easeInOutQuad = (t: number) =>
+          t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+
+        const animation = (currentTime: number) => {
+          if (startTime === null) startTime = currentTime;
+          const timeElapsed = currentTime - startTime;
+          const progress = Math.min(timeElapsed / duration, 1);
+          const scroll = startPosition + distance * easeInOutQuad(progress);
+
+          window.scrollTo(0, scroll);
+
+          if (timeElapsed < duration) {
+            requestAnimationFrame(animation);
+          }
+        };
+
+        requestAnimationFrame(animation);
       }
-    }, 800); // Ensure smooth transition after menu closes
+    }, 800);
   };
 
   return (

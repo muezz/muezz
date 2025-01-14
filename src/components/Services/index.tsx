@@ -98,7 +98,7 @@ const Services: React.FC<ServicesProps> = ({
             alt='decorative lines'
             width={120}
             height={150}
-            className='absolute top-16 left-0'
+            className='absolute top-8 left-0'
           />
         </motion.div>
 
@@ -114,7 +114,7 @@ const Services: React.FC<ServicesProps> = ({
             alt='decorative lines'
             width={50}
             height={50}
-            className='absolute top-16 right-16'
+            className='absolute top-8 right-16'
           />
         </motion.div>
 

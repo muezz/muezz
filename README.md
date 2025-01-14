@@ -1,71 +1,133 @@
-<h2 align="left">Hola 👋! My name is Muezz and I'm a Software Developer.</h2>
-
-###
+# Next.js + Tailwind CSS + TypeScript Starter and Boilerplate
 
 <div align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" height="30" alt="nextjs logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="30" alt="react logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" height="30" alt="flutter logo"  />
-  <img width="12" />
-  <img src="https://cdn.simpleicons.org/supabase/3ECF8E" height="30" alt="supabase logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" height="30" alt="firebase logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" height="30" alt="vuejs logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="30" alt="javascript logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="30" alt="typescript logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" height="30" alt="dart logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="30" alt="html5 logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="30" alt="css3 logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="30" alt="python logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" height="30" alt="go logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" height="30" alt="postgresql logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" height="30" alt="mysql logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="30" alt="git logo"  />
+  <h2>🔋 ts-nextjs-tailwind-starter</h2>
+  <p>Next.js + Tailwind CSS + TypeScript starter packed with useful development features.</p>
+  <p>Made by <a href="https://theodorusclarence.com">Theodorus Clarence</a></p>
+
+[![GitHub Repo stars](https://img.shields.io/github/stars/theodorusclarence/ts-nextjs-tailwind-starter)](https://github.com/theodorusclarence/ts-nextjs-tailwind-starter/stargazers)
+[![Depfu](https://badges.depfu.com/badges/fc6e730632ab9dacaf7df478a08684a7/overview.svg)](https://depfu.com/github/theodorusclarence/ts-nextjs-tailwind-starter?project_id=30160)
+[![Last Update](https://img.shields.io/badge/deps%20update-every%20sunday-blue.svg)](https://shields.io/)
+
 </div>
 
-###
+## Features
 
-<div align="center">
-  <a href="https://discordapp.com/users/478529330171871252" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Discord&logo=discord&label=&color=7289DA&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="discord logo"  />
-  </a>
-  <a href="mailto:muezz7055@gmail.com" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="gmail logo"  />
-  </a>
-</div>
+This repository is 🔋 battery packed with:
 
-###
+- ⚡️ Next.js 14 with App Router
+- ⚛️ React 18
+- ✨ TypeScript
+- 💨 Tailwind CSS 3 — Configured with CSS Variables to extend the **primary** color
+- 💎 Pre-built Components — Components that will **automatically adapt** with your brand color, [check here for the demo](https://tsnext-tw.thcl.dev/components)
+- 🃏 Jest — Configured for unit testing
+- 📈 Absolute Import and Path Alias — Import components using `@/` prefix
+- 📏 ESLint — Find and fix problems in your code, also will **auto sort** your imports
+- 💖 Prettier — Format your code consistently
+- 🐶 Husky & Lint Staged — Run scripts on your staged files before they are committed
+- 🤖 Conventional Commit Lint — Make sure you & your teammates follow conventional commit
+- ⏰ Release Please — Generate your changelog by activating the `release-please` workflow
+- 👷 Github Actions — Lint your code on PR
+- 🚘 Automatic Branch and Issue Autolink — Branch will be automatically created on issue **assign**, and auto linked on PR
+- 🔥 Snippets — A collection of useful snippets
+- 👀 Open Graph Helper Function — Awesome open graph generated using [og](https://github.com/theodorusclarence/og), fork it and deploy!
+- 🗺 Site Map — Automatically generate sitemap.xml
+- 📦 Expansion Pack — Easily install common libraries, additional components, and configs.
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=muezz&hide_title=true&hide_rank=true&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=radical&locale=en&hide_border=true" height="150" alt="stats graph"  />
-  <img src="https://streak-stats.demolab.com?user=muezz&locale=en&mode=weekly&theme=radical&hide_border=true&border_radius=5&date_format=M%20j%5B,%20Y%5D" height="150" alt="streak graph"  />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=muezz&locale=en&hide_title=true&layout=compact&card_width=320&langs_count=5&theme=radical&hide_border=true" height="150" alt="languages graph"  />
-  <img src="https://github-profile-trophy.vercel.app?username=muezz&theme=radical&no-frame=true&no-bg=true&margin-h=10&margin-w=10&row=2&column=2" height="150" alt="trophy graph"  />
-</div>
+See the 👉 [feature details and changelog](https://github.com/theodorusclarence/ts-nextjs-tailwind-starter/blob/main/CHANGELOG.md) 👈 for more.
 
-###
+You can also check all of the **details and demos** on my blog post:
 
-<img src="https://raw.githubusercontent.com/muezz/muezz/output/snake.svg" alt="Snake animation" />
+- [One-stop Starter to Maximize Efficiency on Next.js & Tailwind CSS Projects](https://theodorusclarence.com/blog/one-stop-starter)
 
-###
+## Getting Started
 
-<br clear="both">
+### 1. Clone this template using one of the three ways
 
-<div align="center">
-  <img height="150" src="https://cdn.pixabay.com/animation/2023/10/30/14/33/14-33-03-117_512.gif"  />
-</div>
+1. Use this repository as template
 
-###
+   **Disclosure:** by using this repository as a template, there will be an attribution on your repository.
+
+   I'll appreciate if you do, so this template can be known by others too 😄
+
+   ![Use as template](https://user-images.githubusercontent.com/55318172/129183039-1a61e68d-dd90-4548-9489-7b3ccbb35810.png)
+
+2. Using `create-next-app`
+
+   ```bash
+   pnpm create next-app  -e https://github.com/theodorusclarence/ts-nextjs-tailwind-starter ts-pnpm
+   ```
+
+   If you still want to use **pages directory** (_is not actively maintained_) you can use this command
+
+   ```bash
+   npx create-next-app -e https://github.com/theodorusclarence/ts-nextjs-tailwind-starter/tree/pages-directory project-name
+   ```
+
+3. Using `degit`
+
+   ```bash
+   npx degit theodorusclarence/ts-nextjs-tailwind-starter YOUR_APP_NAME
+   ```
+
+4. Deploy to Vercel
+
+   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Ftheodorusclarence%2Fts-nextjs-tailwind-starter)
+
+### 2. Install dependencies
+
+It is encouraged to use **pnpm** so the husky hooks can work properly.
+
+```bash
+pnpm install
+```
+
+### 3. Run the development server
+
+You can start the server using this command:
+
+```bash
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. You can start editing the page by modifying `src/pages/index.tsx`.
+
+### 4. Change defaults
+
+There are some things you need to change including title, urls, favicons, etc.
+
+Find all comments with !STARTERCONF, then follow the guide.
+
+Don't forget to change the package name in package.json
+
+### 5. Commit Message Convention
+
+This starter is using [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/), it is mandatory to use it to commit changes.
+
+## Projects using ts-nextjs-tailwind-starter
+
+<!--
+TEMPLATE
+- [sitename](https://sitelink.com) ([Source](https://github.com/githublink))
+- [sitename](https://sitelink.com)
+-->
+
+- [theodorusclarence.com](https://theodorusclarence.com) ([Source](https://github.com/theodorusclarence/theodorusclarence.com))
+- [Notiolink](https://notiolink.thcl.dev/) ([Source](https://github.com/theodorusclarence/notiolink))
+- [NextJs + Materia UI + Typescript](https://github.com/AlexStack/nextjs-materia-mui-typescript-hook-form-scaffold-boilerplate-starter)
+
+Are you using this starter? Please add your page (and repo) to the end of the list via a [Pull Request](https://github.com/theodorusclarence/ts-nextjs-tailwind-starter/edit/main/README.md). 😃
+
+## Expansion Pack 📦
+
+This starter is now equipped with an [expansion pack](https://github.com/theodorusclarence/expansion-pack).
+
+You can easily add expansion such as React Hook Form + Components, Storybook, and more just using a single command line.
+
+<https://user-images.githubusercontent.com/55318172/146631994-e1cac137-1664-4cfe-950b-a96decc1eaa6.mp4>
+
+Check out the [expansion pack repository](https://github.com/theodorusclarence/expansion-pack) for the commands
+
+### App Router Update
+
+Due to App Router update, the expansion pack is currently **outdated**. It will be updated in the future. You can still use them by copy and pasting the files.

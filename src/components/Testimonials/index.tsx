@@ -22,13 +22,13 @@ const testimonialList: TestimonialItem[] = [
       '"Their professionalism and expertise are unmatched. Their innovative approach and clear communication ensured the project was completed perfectly. Highly recommended!"',
   },
   {
-    photo: '/images/client1.png',
+    photo: '/images/client3.jpg',
     name: 'Emily Davis',
     content:
       '"They truly understand the importance of user experience and design. The final product not only looks stunning but also performs flawlessly. I couldn’t have asked for a better team to collaborate with."',
   },
   {
-    photo: '/images/client2.png',
+    photo: '/images/client4.jpg',
     name: 'John Smith',
     content:
       '"I was impressed by their ability to handle challenges and deliver results within a tight deadline. Their work ethic and passion for excellence made all the difference in our project’s success."',
@@ -56,13 +56,13 @@ const TestimonialItem: React.FC<TestimonialItemProps> = ({ item }) => {
         <p className='leading-[1.8] opacity-80 mb-6'>{content}</p>
         <div className='flex justify-between items-center mb-6'>
           <div className='flex items-center'>
-            <div className='mr-2'>
+            <div className='mr-2 w-10 h-10'>
               <Image
                 src={photo}
                 alt={name}
-                className='max-w-full h-auto rounded-full border'
-                width={47}
-                height={47}
+                className='rounded-full h-full border border-gray-600'
+                width={40}
+                height={40}
               />
             </div>
             <div>

@@ -205,7 +205,7 @@ const AboutSection = ({
 
       <div className='hidden md:block'>
         <PurpleArrows className='absolute top-12 left-24' />
-        <Dots className='absolute top-8 right-48 lg:right-96' />
+        <Dots className='absolute top-4 right-48 lg:right-96' />
         <Logo className='absolute top-16 right-16' />
         <Arrows className='absolute right-12 hidden lg:block xl:right-36 top-[40%]' />
         <Dots className='absolute bottom-0 lg:bottom-16 left-36 rotate-90' />

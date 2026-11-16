@@ -8,7 +8,6 @@ import {
   lucServices,
   lucSteps,
   lucUrls,
-  whatsappLink,
 } from "#/content/luc";
 import { Badge, Cat, ChatIcon, Dachshund, Paw, ServiceIcon } from "./Art";
 import { QrCode } from "./QrCode";
@@ -33,7 +32,7 @@ function WhatsAppButton({
 }) {
   return (
     <a
-      href={whatsappLink()}
+      href={lucUrls.pageWhatsapp}
       target="_blank"
       rel="noreferrer"
       className={`group inline-flex h-15 items-center justify-center gap-3 rounded-full px-7 text-[1.0625rem] font-semibold tracking-tight transition-transform duration-300 active:scale-[0.98] md:hover:-translate-y-0.5 ${
@@ -81,7 +80,7 @@ function Hero({ ctaRef }: { ctaRef: React.RefObject<HTMLDivElement | null> }) {
           <span className="fraunces text-[2rem] italic">Luc</span>
         </a>
         <a
-          href={whatsappLink()}
+          href={lucUrls.pageWhatsapp}
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center gap-2 rounded-full bg-spruce px-4 py-2.5 text-sm font-semibold text-cream"
@@ -336,7 +335,7 @@ function FinalCta({ ctaRef }: { ctaRef: React.RefObject<HTMLDivElement | null> }
         </Reveal>
         <Reveal delay={0.1} className="hidden md:col-span-4 md:block">
           <figure className="rounded-[2rem] bg-cream p-6 shadow-[0_30px_60px_-40px_rgb(22_48_43/0.6)]">
-            <QrCode value={lucUrls.whatsapp} className="w-full" bg="#fbf7ef" />
+            <QrCode value={lucUrls.screenWhatsapp} className="w-full" bg="#fbf7ef" />
             <figcaption className="mt-4 text-center font-semibold">
               On a computer? Scan to message from your phone.
             </figcaption>
@@ -349,7 +348,7 @@ function FinalCta({ ctaRef }: { ctaRef: React.RefObject<HTMLDivElement | null> }
           © {new Date().getFullYear()} Luc · {luc.trade}
         </span>
         <a
-          href={whatsappLink()}
+          href={lucUrls.pageWhatsapp}
           target="_blank"
           rel="noreferrer"
           className="underline-offset-4 hover:underline"

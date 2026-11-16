@@ -198,14 +198,14 @@ function CardBack() {
         </div>
         <div className="flex gap-[3mm]">
           <QrBlock
-            value={lucUrls.whatsapp}
+            value={lucUrls.qrWhatsapp}
             size="19mm"
             label="WhatsApp"
             labelColor={palette.oat}
             bg={palette.cream}
           />
           <QrBlock
-            value={lucUrls.page}
+            value={lucUrls.qrPage}
             size="19mm"
             label="Website"
             labelColor={palette.oat}
@@ -330,7 +330,7 @@ function Flyer() {
           </p>
         </div>
         <QrBlock
-          value={lucUrls.whatsapp}
+          value={lucUrls.qrWhatsapp}
           size="30mm"
           label="Message Luc"
           labelColor={palette.oat}
@@ -378,7 +378,7 @@ function Poster() {
           </ul>
         </div>
         <QrBlock
-          value={lucUrls.whatsapp}
+          value={lucUrls.qrWhatsapp}
           size="42mm"
           label="Scan to message Luc"
           sub="on WhatsApp"
@@ -411,7 +411,7 @@ function Poster() {
               key={i}
               className="flex flex-col items-center border-l-[0.3mm] border-dashed border-spruce/40 px-[1.5mm] pt-[3mm] first:border-l-0"
             >
-              <QrCode value={lucUrls.whatsapp} bg="#fbf7ef" className="w-[15mm]" />
+              <QrCode value={lucUrls.qrWhatsapp} bg="#fbf7ef" className="w-[15mm]" />
               <div className="mt-[2mm] flex flex-1 items-center">
                 <p className="text-[8.5pt] leading-tight whitespace-nowrap [writing-mode:vertical-rl]">
                   <span className="fraunces text-[12pt] italic">Luc</span> · dog walks &amp; sitting
@@ -478,7 +478,7 @@ function Tent() {
         <TentPanel
           headline="Going away? Your pets can"
           accent="stay home."
-          qr={lucUrls.page}
+          qr={lucUrls.qrPage}
           qrLabel="Scan to see services"
           sub={`WhatsApp ${LUC_PHONE_DISPLAY}`}
           bg={palette.butter}
@@ -488,7 +488,7 @@ function Tent() {
         <TentPanel
           headline="Need a dog"
           accent="walker?"
-          qr={lucUrls.whatsapp}
+          qr={lucUrls.qrWhatsapp}
           qrLabel="Scan to message Luc"
           bg={palette.oat}
         />
@@ -534,7 +534,7 @@ function Banner() {
         <div className="h-[1.6mm] rounded-full" style={{ background: palette.butter }} />
       </div>
       <div className="shrink-0 rounded-[8mm] p-[7mm]" style={{ background: "#fbf7ef" }}>
-        <QrBlock value={lucUrls.whatsapp} size="104mm" label="Scan to message Luc" bg="#fbf7ef" />
+        <QrBlock value={lucUrls.qrWhatsapp} size="104mm" label="Scan to message Luc" bg="#fbf7ef" />
       </div>
     </div>
   );
@@ -582,10 +582,10 @@ function Kit() {
           {[
             {
               label: "Opens WhatsApp",
-              url: lucUrls.whatsapp,
+              url: lucUrls.qrWhatsapp,
               hint: "Opens a chat with Luc, message pre-filled",
             },
-            { label: "Opens the page", url: lucUrls.page, hint: "Luc's services page" },
+            { label: "Opens the page", url: lucUrls.qrPage, hint: "Luc's services page" },
           ].map((code) => (
             <figure key={code.url} className="rounded-[1.75rem] bg-cream p-6">
               <QrCode value={code.url} bg="#fbf7ef" className="w-full" />

@@ -10,11 +10,18 @@ export const LUC_WHATSAPP_MESSAGE =
 
 export const lucPath = "/ref/luc";
 
-/** Absolute URLs — encoded in QR codes only, never printed as text. The WhatsApp
- * one goes through our redirect, so printed codes keep working if the number changes. */
+/** Absolute URLs. `page` is the canonical address; the `qr*` ones are encoded in QR
+ * codes only (never printed as text) and carry `src=qr` so scans are counted
+ * separately (see server/luc-analytics.ts). WhatsApp links go through our redirect,
+ * so printed codes keep working if the number changes and every chat opened is counted. */
 export const lucUrls = {
   page: `${site.url}${lucPath}`,
-  whatsapp: `${site.url}${lucPath}?contact=whatsapp`,
+  qrPage: `${site.url}${lucPath}?src=qr`,
+  qrWhatsapp: `${site.url}${lucPath}?contact=whatsapp&src=qr`,
+  /** The code shown on the page itself (desktop), kept apart from printed scans. */
+  screenWhatsapp: `${site.url}${lucPath}?contact=whatsapp&src=screen`,
+  /** Relative: used by the buttons on the page itself. */
+  pageWhatsapp: `${lucPath}?contact=whatsapp&src=page`,
 };
 
 export function whatsappLink(message = LUC_WHATSAPP_MESSAGE) {

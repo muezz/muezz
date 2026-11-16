@@ -1,12 +1,15 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "muezz",
-  "main": "@tanstack/react-start/server-entry",
+  "main": "src/server.ts",
   "compatibility_date": "2026-11-01",
   "compatibility_flags": ["nodejs_compat"],
   // Serve the Worker on the apex domain (the zone is already on Cloudflare).
   "routes": [{ "pattern": "muezz.dev", "custom_domain": true }],
   "observability": { "enabled": true },
+  // Visit/scan/WhatsApp counts for /ref/luc (src/server/luc-analytics.ts).
+  // Query in the dashboard: Storage & databases → Analytics Engine → Studio.
+  "analytics_engine_datasets": [{ "binding": "LUC_ANALYTICS", "dataset": "luc_events" }],
   // Contact form secrets — set once with:
   //   wrangler secret put EMAIL_HOST   (and EMAIL_PORT, EMAIL_USER, EMAIL_PASS)
 }

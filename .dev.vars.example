@@ -1,0 +1,7 @@
+# Local secrets for `vp dev` / `vp preview` (Cloudflare reads .dev.vars).
+# Copy to .dev.vars. In production, set each one once with:
+#   pnpm exec wrangler secret put EMAIL_HOST   (repeat for each key)
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=587
+EMAIL_USER=
+EMAIL_PASS=

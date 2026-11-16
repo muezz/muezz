@@ -1,14 +1,7 @@
 import { AnimatePresence, motion, useInView, useScroll, useSpring } from "motion/react";
 import { useRef } from "react";
 
-import {
-  LUC_PHONE_DISPLAY,
-  luc,
-  lucPromises,
-  lucServices,
-  lucSteps,
-  lucUrls,
-} from "#/content/luc";
+import { LUC_PHONE_DISPLAY, luc, lucPromises, lucServices, lucSteps, lucUrls } from "#/content/luc";
 import { Badge, Cat, ChatIcon, Dachshund, Paw, ServiceIcon } from "./Art";
 import { QrCode } from "./QrCode";
 

@@ -10,33 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as RefLucRouteImport } from './routes/ref.luc'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RefLucRoute = RefLucRouteImport.update({
+  id: '/ref/luc',
+  path: '/ref/luc',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ref/luc': typeof RefLucRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ref/luc': typeof RefLucRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ref/luc': typeof RefLucRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/ref/luc'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/ref/luc'
+  id: '__root__' | '/' | '/ref/luc'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  RefLucRoute: typeof RefLucRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +58,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ref/luc': {
+      id: '/ref/luc'
+      path: '/ref/luc'
+      fullPath: '/ref/luc'
+      preLoaderRoute: typeof RefLucRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  RefLucRoute: RefLucRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

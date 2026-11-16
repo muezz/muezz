@@ -25,6 +25,19 @@
   --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
 
   --animate-pip: pip 2.4s ease-in-out infinite;
+
+  /* Luc (/ref/luc) */
+  --color-oat: #f3ede2;
+  --color-oat-2: #ebe2d2;
+  --color-spruce: #16302b;
+  --color-spruce-2: #21423b;
+  --color-persimmon: #ee5b2b;
+  --color-sage: #b9cdb1;
+  --color-butter: #f5d76e;
+  --color-blush: #f2c4b0;
+  --color-cream: #fbf7ef;
+  --font-fraunces: "Fraunces Variable", Georgia, serif;
+  --font-inst: "Instrument Sans Variable", "Helvetica Neue", Arial, sans-serif;
 }
 
 @keyframes pip {
@@ -203,6 +216,113 @@ html.lenis body {
 .link-draw:hover,
 .link-draw:focus-visible {
   background-size: 100% 1px;
+}
+
+/* ───────────────────────── Luc ───────────────────────── */
+
+@utility fraunces {
+  font-family: var(--font-fraunces);
+  font-variation-settings:
+    "SOFT" 100,
+    "WONK" 1,
+    "opsz" 144;
+  letter-spacing: -0.035em;
+  line-height: 0.92;
+}
+
+.luc-leg-a {
+  transform-box: fill-box;
+  transform-origin: 50% 0;
+  animation: luc-step 0.7s ease-in-out infinite alternate;
+}
+.luc-leg-b {
+  transform-box: fill-box;
+  transform-origin: 50% 0;
+  animation: luc-step 0.7s ease-in-out infinite alternate-reverse;
+}
+.luc-wag {
+  transform-box: fill-box;
+  transform-origin: 100% 100%;
+  animation: luc-wag 0.45s ease-in-out infinite alternate;
+}
+.luc-spin {
+  animation: luc-spin 22s linear infinite;
+}
+.luc-still {
+  animation: none !important;
+}
+.luc-marquee {
+  animation: luc-marquee 26s linear infinite;
+}
+.luc-bob {
+  animation: luc-bob 0.7s ease-in-out infinite alternate;
+}
+
+@keyframes luc-step {
+  from {
+    transform: rotate(-11deg);
+  }
+  to {
+    transform: rotate(11deg);
+  }
+}
+@keyframes luc-wag {
+  from {
+    transform: rotate(-14deg);
+  }
+  to {
+    transform: rotate(16deg);
+  }
+}
+@keyframes luc-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes luc-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes luc-bob {
+  to {
+    transform: translateY(-3px);
+  }
+}
+
+/* Print sheets: exact colours, no motion, no chrome. */
+.print-root * {
+  animation: none !important;
+  transition: none !important;
+}
+.print-root {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.print-sheet {
+  zoom: var(--preview-zoom, 1);
+}
+@media print {
+  html,
+  body {
+    background: #fff !important;
+  }
+  .print-chrome {
+    display: none !important;
+  }
+  .print-stage {
+    padding: 0 !important;
+    gap: 0 !important;
+    background: none !important;
+  }
+  .print-sheet {
+    zoom: 1;
+    box-shadow: none !important;
+    break-after: page;
+  }
+  .print-sheet:last-child {
+    break-after: auto;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
